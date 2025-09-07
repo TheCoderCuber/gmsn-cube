@@ -15,20 +15,29 @@
     <p>Bringing together cubers of all levels for fun and fair competition.</p>
     <a href="#registration" class="button hero-button">Register Now</a>
   </div>
+
   <nav>
-    <a href="#about" class="button">About</a>
-    <a href="#schedule" class="button">Schedule</a>
-    <a href="#rules" class="button">Rules</a>
-    <a href="#registration" class="button">Register</a>
-    <a href="#contact" class="button">Contact</a>
-    <a href="#find-group" class="button">Your Events</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+
+    <div class="nav-links">
+      <a href="#about" class="button">About</a>
+      <a href="#schedule" class="button">Schedule</a>
+      <a href="#rules" class="button">Rules</a>
+      <a href="#registration" class="button">Register</a>
+      <a href="#contact" class="button">Contact</a>
+      <a href="#find-group" class="button">Your Events</a>
+    </div>
   </nav>
 </header>
 
 <main>
   <section id="about" class="fade-in">
     <h2>About</h2>
-    <p>Welcome to the GMSN Cube Competition! This event brings together cubers of all levels for a fun and fair competition.</p>
+    <p>Welcome to our cubing competition! We’re excited to bring together cubers from our middle schools, giving everyone a chance to test their skills and enjoy the thrill of solving. This event is a mix of newcomers and experienced cubers, so it’s the perfect opportunity to learn, compete, and make new friends in the cubing community.</p>
+    <p>We’ve set up a range of events and challenges, and we’ll have most of the essential equipment ready, including timers, cube covers, and stopwatches. We’re aiming for a fun, fair, and friendly environment, so please bring your best effort and sportsmanship!</p>
   </section>
 
   <section id="find-group" class="fade-in">
@@ -37,24 +46,44 @@
       <input type="text" id="nameInput" placeholder="Type your name here">
       <button id="searchBtn" class="button">Search</button>
     </div>
+    <div id="loadingSpinner" class="spinner" style="display:none;"></div>
     <p id="result"></p>
     <a id="changeEventsBtn" href="#" class="button" style="display:none;">Not Right? Change Events</a>
   </section>
 
-  <section id="schedule" class="fade-in">
-    <h2>Schedule</h2>
-    <ul>
-      <li>10:00 AM – Opening & Warmups</li>
-      <li>11:00 AM – 3x3 Round 1</li>
-      <li>1:00 PM – Lunch Break</li>
-      <li>2:00 PM – 2x2 & Side Events</li>
-      <li>4:00 PM – Finals & Awards</li>
-    </ul>
+  <section id="events" class="fade-in">
+    <h2>Events Overview</h2>
+    <div class="carousel">
+      <div class="card">
+        <img src="3x3-image.jpg" alt="3x3 Cube">
+        <h3>3x3 Cube</h3>
+        <p>Test your speedsolving skills in the classic 3x3 cube event!</p>
+      </div>
+      <div class="card">
+        <img src="2x2-image.jpg" alt="2x2 Cube">
+        <h3>2x2 Cube</h3>
+        <p>Perfect for beginners or anyone looking for a quick challenge.</p>
+      </div>
+      <div class="card">
+        <img src="pyraminx.jpg" alt="Pyraminx">
+        <h3>Pyraminx</h3>
+        <p>A fun pyramid-shaped cube event for variety and speed.</p>
+      </div>
+    </div>
   </section>
 
   <section id="rules" class="fade-in">
     <h2>Rules</h2>
-    <p>All competitors must follow WCA-inspired rules for fair play. No cheating, and be respectful to fellow cubers. Keep in mind this is a school environment.</p>
+    <p>All competitors must follow WCA-inspired rules for fair play. No cheating, and be respectful to fellow cubers. Keep in mind this is a school environment. We will be following a WCA inspired format. Here is a helpful video for competing:</p>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/dPL3eV-A0ww" title="WCA Inspired Format" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <p>Here’s another helpful video for judging:</p>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/BUZ4hZ_40Q0" title="Cube Tips by Tingman" frameborder="0" allowfullscreen></iframe>
+    </div>
   </section>
 
   <section id="registration" class="fade-in">
