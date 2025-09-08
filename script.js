@@ -23,7 +23,7 @@ const spinner = document.getElementById('loadingSpinner');
 document.getElementById('searchBtn').onclick = function() {
   const nameInput = cleanText(document.getElementById('nameInput').value);
   changeBtn.style.display = 'none';
-  result.textContent = "";
+  result.innerHTML = "";
   spinner.style.display = 'block';
 
   const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSReTGk9XBcgQXvvpMy_B4lnU6EgYCjiPAlw3IcDEUbYygTYQqNAW6tgZDZbQA_0uWa2fRrJ2gxYEbJ/pub?output=csv&gid=416130700';
@@ -35,11 +35,10 @@ document.getElementById('searchBtn').onclick = function() {
     complete: function(resultsData) {
       spinner.style.display = 'none';
       const data = resultsData.data;
-      let found = false;
 
-      data.forEach(row => {
+      const found = data.some(row => {
         const name = cleanText(row["What is your full name? Ex: Mark Smith"]);
-        if (!name) return;
+        if (!name) return false;
 
         if (name === nameInput) {
           const events = row["What events will you be competing in? (Cubes are not provided, bring your own cubes for the events you are competing in)"] || "No events listed";
@@ -54,8 +53,10 @@ document.getElementById('searchBtn').onclick = function() {
           changeBtn.style.display = 'inline-block';
           changeBtn.href = `mailto:3003046@geneva304.org?subject=Change Events for ${encodeURIComponent(row["What is your full name? Ex: Mark Smith"])}&body=Hi,%0D%0A%0D%0AMy events listed are incorrect. Please update them to the following:%0D%0A[Enter your events here]%0D%0A%0D%0AThank you!`;
 
-          found = true;
+          return true; // stop iteration
         }
+
+        return false;
       });
 
       if (!found) {
