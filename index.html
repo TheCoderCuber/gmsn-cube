@@ -16,23 +16,30 @@
     <a href="#registration" class="button hero-button">Register Now</a>
   </div>
 
-  <nav>
-    <div class="nav-links">
-      <a href="#about" class="button">About</a>
-      <a href="#schedule" class="button">Schedule</a>
-      <a href="#rules" class="button">Rules</a>
-      <a href="#registration" class="button">Register</a>
-      <a href="#contact" class="button">Contact</a>
-      <a href="#find-group" class="button">Your Events</a>
-    </div>
-  </nav>
+<nav>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+
+  <div class="nav-links">
+    <a href="#about" class="button">About</a>
+    <a href="#find-group" class="button">Your Events</a>
+    <a href="#countdown" class="button">Countdown</a>
+    <a href="#rules" class="button">Rules</a>
+    <a href="#registration" class="button">Register</a>
+    <a href="#contact" class="button">Contact</a>
+  </div>
+</nav>
+
 </header>
 
 <main>
   <section id="about" class="fade-in">
     <h2>About</h2>
-    <p>Welcome to our cubing competition! We’re excited to bring together cubers from our middle schools, giving everyone a chance to test their skills and enjoy the thrill of solving. This event is a mix of newcomers and experienced cubers, so it’s the perfect opportunity to learn, compete, and make new friends in the cubing community.</p>
-    <p>We’ve set up a range of events and challenges, and we’ll have most of the essential equipment ready, including timers, cube covers, and stopwatches. We’re aiming for a fun, fair, and friendly environment, so please bring your best effort and sportsmanship!</p>
+    <p>Welcome to our cubing competition! We’re excited to bring together cubers from our middle schools, giving everyone a chance to test their skills and enjoy the thrill of solving. This event is a mix of newcomers and experienced cubers, so it’s the perfect opportunity to learn, compete, and make new friends in the cubing community.
+
+We’ve set up a range of events and challenges, and we’ll have most of the essential equipment ready, including timers, cube covers, and stopwatches. We’re aiming for a fun, fair, and friendly environment, so please bring your best effort and sportsmanship!</p>
   </section>
 
   <section id="find-group" class="fade-in">
@@ -46,30 +53,32 @@
     <a id="changeEventsBtn" href="#" class="button" style="display:none;">Not Right? Change Events</a>
   </section>
 
-  <section id="events" class="fade-in">
-    <h2>Events Overview</h2>
-    <div class="carousel">
-      <div class="card">
-        <img src="3x3-image.jpg" alt="3x3 Cube">
-        <h3>3x3 Cube</h3>
-        <p>Test your speedsolving skills in the classic 3x3 cube event!</p>
-      </div>
-      <div class="card">
-        <img src="2x2-image.jpg" alt="2x2 Cube">
-        <h3>2x2 Cube</h3>
-        <p>Perfect for beginners or anyone looking for a quick challenge.</p>
-      </div>
-      <div class="card">
-        <img src="pyraminx.jpg" alt="Pyraminx">
-        <h3>Pyraminx</h3>
-        <p>A fun pyramid-shaped cube event for variety and speed.</p>
-      </div>
+  <!-- Countdown Section -->
+<section id="countdown" class="fade-in">
+  <h2>Countdown to Event</h2>
+  <div id="timer">
+    <div class="time-box">
+      <span id="days">00</span>
+      <p>Days</p>
     </div>
-  </section>
+    <div class="time-box">
+      <span id="hours">00</span>
+      <p>Hours</p>
+    </div>
+    <div class="time-box">
+      <span id="minutes">00</span>
+      <p>Minutes</p>
+    </div>
+    <div class="time-box">
+      <span id="seconds">00</span>
+      <p>Seconds</p>
+    </div>
+  </div>
+</section>
 
   <section id="rules" class="fade-in">
     <h2>Rules</h2>
-    <p>All competitors must follow WCA-inspired rules for fair play. No cheating, and be respectful to fellow cubers. Keep in mind this is a school environment. We will be following a WCA inspired format. Here is a helpful video for competing:</p>
+    <p>All competitors must follow WCA-inspired rules for fair play. No cheating, and be respectful to fellow cubers. Keep in mind this is a school environment. We will be following a WCA inspired format here is a helpful video for competing:</p>
 
     <div class="video-container">
       <iframe src="https://www.youtube.com/embed/dPL3eV-A0ww" title="WCA Inspired Format" frameborder="0" allowfullscreen></iframe>
@@ -96,11 +105,4 @@
 <footer>
   <p>&copy; 2025-2026 GMSN Cube Comp</p>
 </footer>
-
-<!-- PapaParse Library -->
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-<!-- Your JavaScript -->
-<script src="script.js"></script>
-
-</body>
-</html>
