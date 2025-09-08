@@ -5,105 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GMSN Cube Competition 2025</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Basic Reset */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* Smooth scrolling */
-    html { scroll-behavior: smooth; }
-
-    /* Body */
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background: linear-gradient(180deg, #2B2F3D, #1A1C26);
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(180deg, #1E275A, #2B2F3D);
-      color: #A39FFF;
-    }
-    .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-    .hero p { font-size: 1.2rem; margin-bottom: 30px; }
-    .hero-button { font-size: 1.1rem; }
-
-    /* Nav */
-    nav {
-      background: #2B2F3D;
-      padding: 15px 0;
-      position: relative;
-      z-index: 100;
-      text-align: center;
-    }
-    .nav-links a.button {
-      margin: 0 8px;
-      padding: 10px 20px;
-      background: #1E275A;
-      color: #A39FFF;
-      border-radius: 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-    .nav-links a.button:hover {
-      background: #3A48A1;
-      color: #fff;
-      transform: translateY(-3px) scale(1.05);
-    }
-
-    /* Fade-in */
-    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 1s ease-out, transform 1s ease-out; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    /* Main */
-    main { max-width: 900px; margin: auto; padding: 4rem 2rem; }
-    section { margin-bottom: 5rem; }
-    h2 {
-      color: #A39FFF;
-      border-bottom: 2px solid #A39FFF;
-      padding-bottom: 0.3rem;
-      margin-bottom: 20px;
-    }
-
-    /* Buttons */
-    .button { cursor: pointer; }
-
-    /* Countdown */
-    #countdown { text-align: center; margin: 30px auto; padding: 20px; }
-    #timer { display: flex; justify-content: center; gap: 20px; }
-    .time-box {
-      background: #A39FFF;
-      color: #1A1C26;
-      padding: 15px 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(163,159,255,0.5);
-      min-width: 80px;
-    }
-    .time-box span { display: block; font-size: 2rem; font-weight: bold; }
-    .time-box p { margin: 0; font-size: 0.9rem; opacity: 0.8; }
-
-    /* Footer */
-    footer { background: #222; color: #f5f5f5; text-align: center; padding: 2rem; }
-
-    /* Search Section */
-    #find-group { text-align: center; }
-    .search-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-    #nameInput { padding: 12px 20px; border-radius: 15px; border: none; outline: none; background: #1E275A; color: #A39FFF; }
-    .result-card { background: #1E275A; color: #A39FFF; padding: 15px 20px; border-radius: 15px; margin-top: 15px; }
-    .result-card.error { background: #5a1e1e; color: #ffb3b3; }
-    .spinner { margin: 15px auto; border: 4px solid rgba(255,255,255,0.2); border-top: 4px solid #A39FFF; border-radius: 50%; width: 36px; height: 36px; animation: spin 1s linear infinite; }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-  </style>
 </head>
 <body>
 
@@ -115,6 +16,11 @@
   </div>
 
   <nav>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+
     <div class="nav-links">
       <a href="#about" class="button">About</a>
       <a href="#find-group" class="button">Your Events</a>
@@ -129,7 +35,9 @@
 <main>
   <section id="about" class="fade-in">
     <h2>About</h2>
-    <p>Welcome to our cubing competition! We’re excited to bring together cubers from our middle schools...</p>
+    <p>Welcome to our cubing competition! We’re excited to bring together cubers from our middle schools, giving everyone a chance to test their skills and enjoy the thrill of solving. This event is a mix of newcomers and experienced cubers, so it’s the perfect opportunity to learn, compete, and make new friends in the cubing community.
+
+We’ve set up a range of events and challenges, and we’ll have most of the essential equipment ready, including timers, cube covers, and stopwatches. We’re aiming for a fun, fair, and friendly environment, so please bring your best effort and sportsmanship!</p>
   </section>
 
   <section id="find-group" class="fade-in">
@@ -146,18 +54,36 @@
   <section id="countdown" class="fade-in">
     <h2>Countdown to Event</h2>
     <div id="timer">
-      <div class="time-box"><span id="days">00</span><p>Days</p></div>
-      <div class="time-box"><span id="hours">00</span><p>Hours</p></div>
-      <div class="time-box"><span id="minutes">00</span><p>Minutes</p></div>
-      <div class="time-box"><span id="seconds">00</span><p>Seconds</p></div>
+      <div class="time-box">
+        <span id="days">00</span>
+        <p>Days</p>
+      </div>
+      <div class="time-box">
+        <span id="hours">00</span>
+        <p>Hours</p>
+      </div>
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <p>Minutes</p>
+      </div>
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <p>Seconds</p>
+      </div>
     </div>
   </section>
 
   <section id="rules" class="fade-in">
     <h2>Rules</h2>
-    <p>All competitors must follow WCA-inspired rules...</p>
+    <p>All competitors must follow WCA-inspired rules for fair play. No cheating, and be respectful to fellow cubers. Keep in mind this is a school environment. We will be following a WCA inspired format here is a helpful video for competing:</p>
+
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/dPL3eV-A0ww" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/dPL3eV-A0ww" title="WCA Inspired Format" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <p>Here’s another helpful video for judging:</p>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/BUZ4hZ_40Q0" title="Cube Tips by Tingman" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
@@ -177,85 +103,7 @@
   <p>&copy; 2025-2026 GMSN Cube Comp</p>
 </footer>
 
-<!-- Scripts at the end so DOM exists -->
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-<script>
-  // Fade-in on scroll
-  const faders = document.querySelectorAll('.fade-in');
-  const appearOptions = { threshold: 0.2 };
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-  faders.forEach(fader => appearOnScroll.observe(fader));
-
-  // Countdown Timer
-  const countDownDate = new Date("Jan 5, 2030").getTime();
-  setInterval(() => {
-    const now = new Date().getTime();
-    const distance = countDownDate - now;
-    const days = Math.floor(distance / (1000*60*60*24));
-    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-    const seconds = Math.floor((distance % (1000*60)) / 1000);
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
-  }, 1000);
-
-  // Helper: clean text
-  function cleanText(text) { return text ? text.replace(/"/g,'').trim().toLowerCase() : ""; }
-
-  // Search functionality
-  const changeBtn = document.getElementById('changeEventsBtn');
-  const result = document.getElementById('result');
-  const spinner = document.getElementById('loadingSpinner');
-
-  document.getElementById('searchBtn').onclick = function() {
-    const nameInput = cleanText(document.getElementById('nameInput').value);
-    changeBtn.style.display = 'none';
-    result.innerHTML = "";
-    spinner.style.display = 'block';
-
-    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSReTGk9XBcgQXvvpMy_B4lnU6EgYCjiPAlw3IcDEUbYygTYQqNAW6tgZDZbQA_0uWa2fRrJ2gxYEbJ/pub?output=csv&gid=416130700';
-
-    Papa.parse(csvUrl, {
-      download: true,
-      header: true,
-      skipEmptyLines: true,
-      complete: function(resultsData) {
-        spinner.style.display = 'none';
-        const data = resultsData.data;
-        const found = data.some(row => {
-          const name = cleanText(row["What is your full name? Ex: Mark Smith"]);
-          if (!name) return false;
-          if (name === nameInput) {
-            const events = row["What events will you be competing in? (Cubes are not provided, bring your own cubes for the events you are competing in)"] || "No events listed";
-            result.innerHTML = `<div class="result-card"><strong>Name:</strong> ${row["What is your full name? Ex: Mark Smith"]}<br><strong>Events:</strong> ${events}</div>`;
-            changeBtn.style.display = 'inline-block';
-            changeBtn.href = `mailto:3003046@geneva304.org?subject=Change Events for ${encodeURIComponent(row["What is your full name? Ex: Mark Smith"])}&body=Hi,%0D%0A%0D%0AMy events listed are incorrect. Please update them to the following:%0D%0A[Enter your events here]%0D%0A%0D%0AThank you!`;
-            return true;
-          }
-          return false;
-        });
-        if (!found) {
-          result.innerHTML = `<div class="result-card error">Name not registered.</div>`;
-          changeBtn.style.display = 'none';
-        }
-      },
-      error: function(err) {
-        spinner.style.display = 'none';
-        result.innerHTML = `<div class="result-card error">Error loading data. Check the CSV URL.</div>`;
-        changeBtn.style.display = 'none';
-        console.error("CSV parse error:", err);
-      }
-    });
-  };
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
